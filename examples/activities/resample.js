@@ -7,7 +7,7 @@ var clone = require("clone");
 var output = require("../../lib/output"),
     shell = require("../../lib/shell");
 
-module.exports = function resample(localInputPath, outputUri, options, callback) {
+module.exports = function resample(inputPath, outputUri, options, callback) {
   try {
     assert.ok(Array.isArray(options.targetExtent), "resample: targetExtent must be an array");
     assert.equal(4, options.targetExtent.length, "resample: targetExtent must be an array of 4 elements");
@@ -69,7 +69,7 @@ module.exports = function resample(localInputPath, outputUri, options, callback)
     }
 
     args = args.concat([
-      localInputPath,
+      inputPath,
       localOutputPath
     ]);
 

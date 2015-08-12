@@ -8,7 +8,7 @@ var clone = require("clone"),
 var output = require("../../lib/output"),
     shell = require("../../lib/shell");
 
-module.exports = function translate(localInputPath, outputUri, options, callback) {
+module.exports = function translate(inputPath, outputUri, options, callback) {
   return output(outputUri, callback, function(err, localOutputPath, done) {
     if (err) {
       return callback(err);
@@ -31,7 +31,7 @@ module.exports = function translate(localInputPath, outputUri, options, callback
     }
 
     args = args.concat([
-      localInputPath,
+      inputPath,
       localOutputPath
     ]);
 
