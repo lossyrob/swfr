@@ -9,5 +9,6 @@ var activities = require("./lib/activities"),
 module.exports.activities = activities;
 module.exports.activity = activity;
 module.exports.decider = decider;
-module.exports.output = output;
+module.exports.singleOutput = output.singleOutput;
+module.exports.multiOutput = output.multiOutput;
 module.exports.shell = shell;
