@@ -7,7 +7,7 @@ var clone = require("clone");
 var output = require("../../lib/output"),
     shell = require("../../lib/shell");
 
-module.exports = function reproject(localInputPath, outputUri, options, callback) {
+module.exports = function reproject(inputPath, outputUri, options, callback) {
   try {
     assert.ok(options.targetSRS, "reproject: Target SRS is required");
   } catch (err) {
@@ -40,7 +40,7 @@ module.exports = function reproject(localInputPath, outputUri, options, callback
     }
 
     args = args.concat([
-      localInputPath,
+      inputPath,
       localOutputPath
     ]);
 
